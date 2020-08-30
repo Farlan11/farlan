@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>UwU</title>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<style>
+		p{
+			text-align: center;
+			margin-bottom: 50px;
+			font-size: 30px;
+			font-family: 'Press Start 2P', cursive;
+		}
+		button{
+			height: 120px;
+			width: 200px;
+			background-color: #950B22;
+		  	border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 26px;
+			cursor: pointer;
+		}
+	.caja {
+  	 position: relative;
+  	 float:left;
+  /*top: 400px;*/
+  /*top no debe ser menor a -70 ni mayor a 400 */
+  /*left no debe ser menor a 0 ni mayor a 1000*/
+  /*left: 1000px;*/
+  width: 200px;
+  height: 120px;
+  border: 3px solid #000;
+  margin-left: 28px;
+}
+
+.sip{
+	margin-top: 20px;
+	position: relative;
+  	 float:left;
+  	 left: 65px;
+  	 background: #BD4156;
+  width: 300px;
+  height: 150px;
+  border: 3px solid #000;
+  margin-left: 28px;
+  text-align: center;
+  padding: 20px;
+  line-height: 40px;
+	display: none;
+}
+
+.fondo{
+	padding: 20px;
+	background: #F16D83;
+	width: 500px;
+  	height: 520px;
+
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ 
+ 	nuevo =0;
+ 	var top =0;
+	$("#test").mouseenter(function(){
+		
+		
+		nuevo = nuevo + 400;
+		top = top + 100;
+		// document.getElementById("nuevo").innerHTML = nuevo;
+		
+	    //document.getElementById("top").innerHTML = top;
+		$("#test").css("background-color", "yellow");
+		
+		if(nuevo>1000)
+		{
+			nuevo =0;
+			$("#test").css("left", String(nuevo) + "px");
+		}
+		else {
+			$("#test").css("left", +String(nuevo) + "px");		
+		}
+		if(top>400)
+		{
+			top =0;
+			$("#test").css("top", String(top) + "px");
+		}
+		else {
+			$("#test").css("top", +String(top) + "px");		
+		}		
+	});
+	
+  // $("p").mouseleave(function(){
+  //   $("p").css("background-color", "lightgray");
+  //   $("p").css("right", "0px");
+  //   $("p").css("left", "0px");
+  //   $("p").css("top", "0px");
+  // });		
+});
+function si(){
+			 document.getElementById("sip").style.display = "block";
+		}	
+</script>
+</head>
+<body>
+	<!-- <p id="top">top 0</p>
+<p id="nuevo">nuevo 0</p> -->
+<div class="fondo">
+	<p>Quieres ser mi morrita?</p>
+	<div class="caja">
+		<button onclick="si()">SI</button>
+	</div>
+	<div id="sip" class="sip">
+		<p>Sabia que sí querías UwU</p>
+	</div>
+	<div class="caja" id="test">
+		<button>NO</button>
+	</div>
+</div>
+
+</body>
+</html>
